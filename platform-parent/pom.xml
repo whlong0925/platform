@@ -30,11 +30,6 @@
 		    </dependency>
 			<dependency>
 		      <groupId>${project.groupId}</groupId>
-		      <artifactId>platform-hibernate</artifactId>
-			  <version>${project.version}</version>
-		    </dependency>
-			<dependency>
-		      <groupId>${project.groupId}</groupId>
 		      <artifactId>platform-utils</artifactId>
 			  <version>${project.version}</version>
 		    </dependency>

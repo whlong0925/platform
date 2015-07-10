@@ -1,10 +1,6 @@
-/**
- * 
- */
-package com.sinmo.basic.dao;
+package com.sinmo.service;
 
 import java.lang.reflect.ParameterizedType;
-import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -12,10 +8,10 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.sinmo.basic.model.Pager;
+import com.sinmo.model.Pager;
 
-public class BaseDao<T> implements IBaseDao<T> {
-    @Resource
+public class BaseService<T> {
+	@Resource
 	private SessionFactory sessionFactory;
 	/**
 	 * 创建一个Class的对象来获取泛型的class
@@ -60,15 +56,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	}
 
 
-	public List<T> list(String hql, Object arg) {
-		return this.list(hql, new Object[] { arg });
-	}
-
-	public List<T> list(String hql) {
-		return this.list(hql, null);
-	}
-
-	
 
 	private static void setParameter(Query query, Object[] args) {
 		if (args != null && args.length > 0) {

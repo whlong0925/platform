@@ -1,4 +1,4 @@
-package com.sinmo.basic.model;
+package com.sinmo.model;
 
 /**
  * 用来传递列表对象的ThreadLocal数据

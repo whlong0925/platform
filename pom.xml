@@ -10,6 +10,5 @@
   	<module>platform-core</module>
   	<module>platform-web</module>
   	<module>platform-utils</module>
-  	<module>platform-hibernate</module>
   </modules>
 </project>

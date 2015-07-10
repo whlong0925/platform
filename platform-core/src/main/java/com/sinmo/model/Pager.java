@@ -1,4 +1,4 @@
-package com.sinmo.basic.model;
+package com.sinmo.model;
 
 import java.util.List;
 
