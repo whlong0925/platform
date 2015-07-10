@@ -8,6 +8,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sinmo.basic.model.User;
+import com.sinmo.common.DateUtil;
 import com.sinmo.service.IUserService;
  
  
@@ -26,6 +27,7 @@ public class UserServiceTest {
 		t.setUsercode("admin");
 		t.setUsername("adminname");
 		userService.add(t);
+		System.out.println(DateUtil.getDate());
 	}
  
 }

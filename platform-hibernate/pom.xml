@@ -58,5 +58,10 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>platform-utils</artifactId>
+		</dependency>
 	</dependencies>
 </project>

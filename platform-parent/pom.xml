@@ -22,7 +22,29 @@
 
 	<dependencyManagement>
 		<dependencies>
-
+		  <!-- 自模块开始 -->
+			<dependency>
+		      <groupId>${project.groupId}</groupId>
+		      <artifactId>platform-core</artifactId>
+			  <version>${project.version}</version>
+		    </dependency>
+			<dependency>
+		      <groupId>${project.groupId}</groupId>
+		      <artifactId>platform-hibernate</artifactId>
+			  <version>${project.version}</version>
+		    </dependency>
+			<dependency>
+		      <groupId>${project.groupId}</groupId>
+		      <artifactId>platform-utils</artifactId>
+			  <version>${project.version}</version>
+		    </dependency>
+			<dependency>
+		      <groupId>${project.groupId}</groupId>
+		      <artifactId>platform-web</artifactId>
+			  <version>${project.version}</version>
+		    </dependency>
+		   <!-- 自模块结束 --> 
+		   
 			<!-- junit -->
 			<dependency>
 				<groupId>junit</groupId>
