@@ -1,14 +1,15 @@
 package com.sinmo.service;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import com.sinmo.model.Pager;
+import org.hibernate.transform.Transformers;
 
 public class BaseService<T> {
 	@Resource
@@ -54,10 +55,35 @@ public class BaseService<T> {
 	public T load(int id) {
 		return (T) getSession().load(getClz(), id);
 	}
-
-
-
-	private static void setParameter(Query query, Object[] args) {
+	public T get(Class<T> entityName, Serializable id) {
+		T t = (T) getSession().get(entityName, id);
+		if (t != null) {
+			getSession().flush();
+		}
+		return t;
+	}
+	
+	public int batchInsert(List<T> entityList) {
+		int num = 0;
+		for (int i = 0; i < entityList.size(); i++) {
+			add(entityList.get(i));
+			num++;
+		}
+		return num;
+	}
+	public void batchSave(List<T> entitys,int batchSize) {
+		for (int i = 0; i < entitys.size(); i++) {
+			getSession().save(entitys.get(i));
+			if (i % batchSize == 0) {
+				getSession().flush();
+				getSession().clear();
+			}
+		}
+		getSession().flush();
+		getSession().clear();
+	}
+	
+	private static void setParameter(Query query, Object... args) {
 		if (args != null && args.length > 0) {
 			int index = 0;
 			for (Object arg : args) {
@@ -66,27 +92,28 @@ public class BaseService<T> {
 		}
 	}
 
-	public Pager<T> find(String hql, Object arg) {
-		return this.find(hql, new Object[] { arg });
+	public List<T> findByHql(String hql, Object... args) {
+		Query query = getSession().createQuery(hql);
+		setParameter(query, args);
+		return query.list();
+	}
+	public List<T> findBySql(String sql,Class<T> entityType, Object... args) {
+		Query query = getSession().createSQLQuery(sql).addEntity(entityType);
+		setParameter(query, args);
+		return query.list();
+	}
+	public List<T> findBySqlTransformer(String sql,Class<T> entityType, Object... args) {
+		Query query = getSession().createSQLQuery(sql).setResultTransformer(Transformers.aliasToBean(entityType));
+		setParameter(query, args);
+		return query.list();
 	}
 
-	public Pager<T> find(String hql) {
-		return this.find(hql, null);
-	}
 
 
-	public void updateByHql(String hql, Object[] args) {
+	public void updateByHql(String hql, Object... args) {
 		Query query = getSession().createQuery(hql);
 		setParameter(query, args);
 		query.executeUpdate();
-	}
-
-	public void updateByHql(String hql, Object arg) {
-		this.updateByHql(hql, new Object[] { arg });
-	}
-
-	public void updateByHql(String hql) {
-		this.updateByHql(hql, null);
 	}
 
 }

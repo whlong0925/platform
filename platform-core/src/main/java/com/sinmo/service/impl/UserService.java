@@ -15,12 +15,15 @@ public class UserService extends BaseService<User> implements IUserService {
 
 	@Override
 	public List<User> getlistUserByHql(String hql, Object[] objects) {
-		return null;
+		List<User> list = this.findByHql(hql, objects);
+		return list;
 	}
 
 	@Override
 	public List<User> getListUserBySql(String sql, Object[] objects) {
-		return null;
+//		List<User> list = this.findBySql(sql,User.class, objects);
+		List<User> list = this.findBySqlTransformer(sql, User.class,objects);
+		return list;
 	}
 
 	@Override

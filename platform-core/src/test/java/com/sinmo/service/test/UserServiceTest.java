@@ -1,4 +1,6 @@
 package com.sinmo.service.test;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -22,7 +24,7 @@ public class UserServiceTest {
  
 	@Test
 	public void testSave() {
-		/*for(int i=0;i<5;i++){
+		for(int i=0;i<5;i++){
 			User t = new User();
 			t.setUsercode("usercode"+i);
 			t.setUsername("username"+i);
@@ -31,28 +33,28 @@ public class UserServiceTest {
 			Department d = new Department();
 			d.setDepartName("departname"+i);
 			this.deptService.saveDept(d);
-		}*/
-		Department d = new Department();
-		d.setDepartName("departname");
-		this.deptService.saveDept(d);
-		/*User t = new User();
-		t.setUsercode("admin");
-		t.setUsername("adminname");
-		System.out.println("test load");
-		this.userService.saveUser(t);*/
+		}
 	}
 	@Test
-	public void testLoad() {//测试只读事务
+	public void testLoad() {//测试只读事务不能增删改
 		User t = new User();
 		t.setUsercode("admin");
 		t.setUsername("adminname");
-		t.setId(9);
-		System.out.println("test load");
+		t.setId(2);
 		this.userService.loadUser(t);
 	}
 	@Test
 	public void testDelete() {
 		this.userService.deleteUserById(6);
+	}
+	@Test
+	public void testGet() {
+		String sql = "select u.*,d.departName from t_user u left join t_department d on u.deptId = d.id where u.id = ?";
+		List<User> list = this.userService.getListUserBySql(sql, new Object[]{2});
+		for(User user : list){
+			System.out.println("deptname:"+user.getDepartName()+",deptId="+user.getDeptId()+",username="+user.getUsername());
+		}
+		System.out.println(list.size());
 	}
  
 }
