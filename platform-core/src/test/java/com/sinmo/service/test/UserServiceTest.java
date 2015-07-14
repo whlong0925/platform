@@ -1,6 +1,4 @@
 package com.sinmo.service.test;
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -35,6 +33,7 @@ public class UserServiceTest {
 			this.deptService.saveDept(d);
 		}
 	}
+	/*
 	@Test
 	public void testLoad() {//测试只读事务不能增删改
 		User t = new User();
@@ -55,6 +54,6 @@ public class UserServiceTest {
 			System.out.println("deptname:"+user.getDepartName()+",deptId="+user.getDeptId()+",username="+user.getUsername());
 		}
 		System.out.println(list.size());
-	}
+	}*/
  
 }
