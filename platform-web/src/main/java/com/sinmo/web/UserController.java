@@ -45,6 +45,7 @@ public class UserController {
 		user.setDeptId(1);
 		this.userService.saveUser(user);*/
 		System.out.println(id);
+		System.out.println("我是dev");
 		return "users/host";
 	}
 
