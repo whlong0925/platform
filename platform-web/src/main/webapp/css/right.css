@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+.flilter_2{
+	border:1px solid #d2d2d2;
+	border-bottom:0px;
+	margin-top:10px;
+	padding:10px;}
+.flilter_2 table{
+	}
+.flilter_2 table th{
+	color:#32c8d9;
+	padding-top:10px;}	
+	
+.hotMod{
+	display:block;
+	float:left;
+	padding:5px;
+	margin:5px;
+	
+}
+.hmCon{
+	text-align:center;}	
+.percentCon{
+	text-align:center;}
+.hotMod h2{
+	font-weight:normal;
+	color:#44b5df;
+	font-family:Courier New;
+	background:url(../images/star.png) no-repeat;
+	padding-left:20px;
+	font-size:16px;
+	margin:10px 0px;}	
+.hotMod table th,.hotMod table td{
+	color:#787878;
+	font-size:12px;}	
+.hotMod table th{
+	font-weight:normal;
+	text-align:right;}
+a.more{
+	text-decoration:underline;
+	margin:0px 5px;
+	color:#41aed6;}	
+.tipCon{
+	position:absolute;
+	display:none;
+	background:#44b5df;
+	color:#fff;
+	font-family:Courier New;
+	width:260px;
+	padding:10px;
+	 text-align:center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;}					

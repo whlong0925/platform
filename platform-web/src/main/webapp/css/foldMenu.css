@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+/*折叠菜单样式*/
+.foldCon{
+	margin:2px 0 0 2px;}
+.foldCon h1,.foldCon .listCon a{
+	height:33px;
+	padding:8px 10px 0 32px;
+	font-size:16px;
+	font-weight:normal;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;}	
+.foldCon h1.lm-up{
+	background:url(../images/lm_up.png) no-repeat;}	
+.foldCon h1.lm-down{
+	background:url(../images/lm_down.png) no-repeat;}
+.foldCon .listCon{
+	display:none;
+	overflow:auto;}	
+.foldCon .listCon a{
+	display:block;
+	color:#5a5a5a;
+}
+.foldCon .listCon a:hover{
+	background:url(../images/lm_current.png) no-repeat;
+	color:#fff;}
+.flilter_1{
+	height:35px;
+	background:url(../images/filterbg.png) repeat-x;}			

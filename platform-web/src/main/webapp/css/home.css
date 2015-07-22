@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+.mContainer{
+	width:900px;
+	margin:0px auto;
+	overflow:auto;}
+.linkCon{
+	width:420px;
+	height:150px;
+	float:left;
+	cursor:pointer;}	
+.linkCon img{
+	float:left;
+	margin-right:10px;}	
+	
+.mR{
+	margin-right:20px;}
+.mB{
+	margin-bottom:20px;}
+.cen{
+	float:none;
+	margin:0 auto;}	
+	
+.linkCon h2{
+	font-size:18px;
+	font-weight:normal;
+	margin-bottom:15px;}
+.linkCon p{
+	font-size:12px;
+	color:#797979;
+	line-height:20px;}		

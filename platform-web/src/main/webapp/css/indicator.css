@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.indicatorCon{
+	position:relative;
+	background:url(../images/perRing.png) no-repeat center center;
+	height:132px;
+	width:132px;
+	margin:0 auto;}
+#innerRoundBg{
+	position:absolute;
+	left:30px;
+	top:30px;
+	display:block;
+	height:72px;
+	width:72px;
+	-moz-border-radius:40px;
+	-webkit-border-radius:40px;
+	border-radius:40px;
+	}
+	
+.ringProgress{
+	position:absolute;
+	top:5px;
+	left:5px;}	
+	
+.mapExp{
+	position:absolute;
+	bottom:0px;
+	right:-350px;}

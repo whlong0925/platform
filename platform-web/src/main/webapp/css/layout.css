@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{
+	height:100%;}
+.Container{
+	padding: 0px;}
+.leftCon{
+	float:left;
+	width:216px;
+	padding:10px 10px;
+	}
+.rightCon{
+	float:left;
+	padding:10px 10px 10px 0px;
+	overflow:auto;}		
+.leftCon,.rightCon{
+	
+	}
+.funCon{
+	height:40px;
+	text-align:center;
+	padding:6px 5px;}	
+.menuCon{
+	background:#fff;
+	}	
