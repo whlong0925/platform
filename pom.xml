@@ -10,5 +10,6 @@
   	<module>platform-core</module>
   	<module>platform-web</module>
   	<module>platform-utils</module>
+  	<module>platform-activiti</module>
   </modules>
 </project>

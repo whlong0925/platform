@@ -43,6 +43,11 @@
 		      <artifactId>platform-web</artifactId>
 			  <version>${project.version}</version>
 		    </dependency>
+			<dependency>
+		      <groupId>${project.groupId}</groupId>
+		      <artifactId>platform-activiti</artifactId>
+			  <version>${project.version}</version>
+		    </dependency>
 			
 		   <!-- 自模块结束 --> 
 		   
